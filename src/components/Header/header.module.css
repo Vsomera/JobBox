@@ -1,0 +1,49 @@
+#header_root {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px #e5e7eb solid;
+	padding: 0.75rem 0;
+}
+
+#header_container {
+	width: 95vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+#logo_title {
+	display: flex;
+}
+
+#logo_title {
+	display: flex;
+	gap: 1rem;
+}
+
+#logo {
+	width: 25%;
+	height: auto;
+}
+
+p {
+	font-size: 1.25rem;
+}
+
+#nav_bar {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.nav_icons {
+	height: min-content;
+	cursor: pointer;
+}
+
+.icons {
+	width: 75%;
+	height: auto;
+}
