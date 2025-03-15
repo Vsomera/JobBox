@@ -1,11 +1,13 @@
 import { Wave } from "../../assets/wave";
 import { Arrow } from "../../assets/arrow";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Tracker = () => {
 
-
 	const navigate = useNavigate()
+
+	const [applications, setApplications] = useState([]);
 
 	return (
 		
@@ -31,6 +33,7 @@ export const Tracker = () => {
 									Search for Jobs <Arrow className="ml-4" height="2rem" width="2rem"/>
 								</button>
 							</div>
+
 						</div>
 						<hr />
 

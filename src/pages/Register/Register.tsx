@@ -27,7 +27,7 @@ export const Register = () => {
               alt="JobBox.io Logo"
               className={styles.logoImage}
             />
-            <span>JobBox.io</span>
+            <span className='ml-2'>JobBox.io</span>
           </div>
 
           {/* Change heading to "Register with Email" */}
