@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './auth.module.css';
 
-export const Auth = () => {
+export const Login = () => {
   document.title = "JobBox.io | Login";
   
   // State for form inputs
@@ -26,7 +26,7 @@ export const Auth = () => {
               alt="JobBox.io Logo"
               className={styles.logoImage}
             />
-            <span>JobxBox.io</span>
+            <span className='ml-2'>JobBox.io</span>
           </div>
 
           <h1 className={styles.authTitle}>Login with Email</h1>

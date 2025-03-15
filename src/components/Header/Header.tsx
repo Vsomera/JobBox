@@ -33,7 +33,7 @@ export const Header = () => {
 							</Link>
 						</li>
 						<li className={styles.nav_icons}>
-							<Link to='/auth'>
+							<Link to='/login'>
 								<img
 									src='../../../public/profile.png'
 									alt=''
