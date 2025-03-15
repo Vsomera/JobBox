@@ -20,7 +20,6 @@ export const Login = () => {
     try {
       // login using user and password
       await doSignInWithEmailAndPassword(email, password)
-      navigate('/')
     } catch (err) {
       console.log(err)
     }

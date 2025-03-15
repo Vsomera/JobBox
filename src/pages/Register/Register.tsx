@@ -21,11 +21,9 @@ export const Register = () => {
     
     try {
       await doCreateUserWithEmailAndPassword(email, password)
-      navigate('/')
     } catch (err) {
       console.log(err)
-    }
-  
+    }  
   };
 
   return (

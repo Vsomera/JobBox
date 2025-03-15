@@ -7,8 +7,6 @@ export const Tracker = () => {
 
 	const navigate = useNavigate()
 
-	const [applications, setApplications] = useState([]);
-
 	return (
 		
 		<>

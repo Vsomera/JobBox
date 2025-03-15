@@ -1,12 +1,8 @@
-import { doSignOut } from '../../config/auth';
+import { Logout } from '../../assets/logout';
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
 
 export const Header = () => {
-
-	const navigate = useNavigate();
 
 	return (
 		<>
@@ -40,20 +36,11 @@ export const Header = () => {
 							</Link>
 						</li>
 						<li className={styles.nav_icons}>
-							<div onClick={ async () => {
-								try {
-									await doSignOut()
-									navigate("/login")
-								} catch (err) {
-									console.log(err)
-								}
-							}}>
-								<img
-									src='../../../public/profile.png'
-									alt=''
-									className={styles.icons}
-								/>
-							</div>
+
+							<Link to ='/login'>
+								<Logout height='30px' width='30px' />
+							</Link>
+
 						</li>
 					</ul>
 				</div>
