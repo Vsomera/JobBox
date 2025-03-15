@@ -4,9 +4,12 @@ import { Login } from './pages/Login/Login';
 import { Tracker } from './pages/Tracker/Tracker';
 import { Register } from './pages/Register/Register'
 import { Header } from './components/Header/Header';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { UserContext } from './contexts/userContext';
+import { useContext, useEffect } from 'react';
 
-function App() {
+function App() {	
+
 	return (
 			<div>
 				<Router>

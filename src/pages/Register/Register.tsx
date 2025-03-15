@@ -2,17 +2,28 @@
 
 import { useState } from 'react';
 import styles from './Register.module.css';
+import { doCreateUserWithEmailAndPassword, doSignInWithGoogle } from '../../config/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
   document.title = "JobBox.io | Register";
   
+  const navigate = useNavigate()
+
   // State for form inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Register attempt with:', { email, password });
+    
+    try {
+      await doCreateUserWithEmailAndPassword(email, password)
+    } catch (err) {
+      console.log(err)
+    }  
   };
 
   return (
@@ -82,7 +93,16 @@ export const Register = () => {
                 </button>
 
                 {/* Change button text to "Register with Google" */}
-                <button type="button" className={styles.socialButton}>
+                <button type="button" 
+                onClick={async () => {
+                  try {
+                    await doSignInWithGoogle();
+                    navigate('/')
+                  } catch (err) {
+                    console.log(err)
+                  }
+                }}
+                className={styles.socialButton}>
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="14" 

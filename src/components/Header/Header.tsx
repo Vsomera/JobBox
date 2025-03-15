@@ -1,6 +1,9 @@
+import { Logout } from '../../assets/logout';
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
+
 export const Header = () => {
+
 	return (
 		<>
 			<div id={styles.header_root}>
@@ -33,13 +36,11 @@ export const Header = () => {
 							</Link>
 						</li>
 						<li className={styles.nav_icons}>
-							<Link to='/login'>
-								<img
-									src='../../../public/profile.png'
-									alt=''
-									className={styles.icons}
-								/>
+
+							<Link to ='/login'>
+								<Logout height='30px' width='30px' />
 							</Link>
+
 						</li>
 					</ul>
 				</div>
