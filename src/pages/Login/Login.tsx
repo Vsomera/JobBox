@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './auth.module.css';
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../config/auth';
 
 export const Login = () => {
   document.title = "JobBox.io | Login";
@@ -8,9 +9,17 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login attempt with:', { email, password });
+    
+    try {
+      // login using user and password
+      await doSignInWithEmailAndPassword(email, password)
+    } catch (err) {
+      console.log(err)
+    }
+    
   };
 
   return (
@@ -76,7 +85,16 @@ export const Login = () => {
                   </svg>
                   Login with GitHub
                 </button>
-                <button type="button" className={styles.socialButton}>
+                <button type="button" 
+                onClick={
+                  async () => {
+                    try {
+                      await doSignInWithGoogle();
+                    } catch (err) {
+                      console.log(err)
+                    }
+                }}
+                className={styles.socialButton}>
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="14" 
