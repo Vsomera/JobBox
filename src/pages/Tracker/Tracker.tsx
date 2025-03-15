@@ -118,7 +118,14 @@ export const Tracker = () => {
                   </div>
                 ))
               ) : (
-                <p>No applications found for this user.</p>
+				<div className="flex w-full items-center justify-center h-100">
+  					<div className="flex flex-col gap-4 items-center"> 
+						<img src='../../../public/greyedOutLogo.svg' 
+						alt='Company logo'
+						 className="w-1/1.5 h-auto " />
+						<p className="text-xs font-poppins text-[#b7b3bf]"> No Applications - Apply to jobs to list them here!</p>
+					</div>
+				</div>
               )}
             </div>
           </div>
