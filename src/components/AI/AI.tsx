@@ -8,7 +8,7 @@ export const AI = ({ job_description }) => {
 	const [error, setError] = useState(null);
 
 	const openai = new OpenAI({
-		apiKey: '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',
+		apiKey: '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',
 		dangerouslyAllowBrowser: true,
 	});
 
@@ -61,7 +61,6 @@ export const AI = ({ job_description }) => {
 				<p>Loading summary...</p>
 			) : (
 				<>
-					{error && <p className={styles.error}>Error: {error}</p>}
 					{summary && (
 						<>
 							<div id={styles.ai_header_container}>
