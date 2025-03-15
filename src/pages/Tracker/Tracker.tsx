@@ -22,6 +22,17 @@ export const Tracker = () => {
 	const [applications, setApplications] = useState<Application[]>([]);
 	const [loading, setLoading] = useState(true);
 
+	const getStatusLabel = (status: string) => {
+		const statusMap: { [key: string]: { label: string; color: string } } = {
+			inter: { label: 'Interview', color: 'purple-50' },
+			applied: { label: 'Applied', color: 'blue-50' },
+			rejected: { label: 'Rejected', color: 'red-50' },
+			offer: { label: 'Offer', color: 'green-40' },
+		};
+
+		return statusMap[status] || { label: 'Unknown', color: 'gray-500' };
+	};
+
 	const uid = user?.uid;
 
 	useEffect(() => {
@@ -102,20 +113,45 @@ export const Tracker = () => {
 
 										<div>{application.company}</div>
 
-										<div>{application.status}</div>
+										<div className='flex items-center'>
+											<span
+												className={`h-3 w-3 rounded-full bg-blue-500 mr-2`}
+											/>
+											<span className='font-medium'>
+												{
+													getStatusLabel(
+														application.status
+													).label
+												}
+											</span>
+										</div>
 
-										{/* <div>`${application.intDate}`</div> */}
+										<div>{application.intDate}</div>
 
 										<a
+											className='underline text-teal-500'
 											href={application.postURL}
 											target='_blank'
 											rel='noopener noreferrer'>
-											{application.postURL}
+											Job Posting
 										</a>
 									</div>
 								))
 							) : (
-								<p>No applications found for this user.</p>
+								<div className='flex w-full items-center justify-center h-100'>
+									<div className='flex flex-col gap-4 items-center'>
+										<img
+											src='../../../public/greyedOutLogo.svg'
+											alt='Company logo'
+											className='w-1/1.5 h-auto '
+										/>
+										<p className='text-xs font-poppins text-[#b7b3bf]'>
+											{' '}
+											No Applications - Apply to jobs to
+											list them here!
+										</p>
+									</div>
+								</div>
 							)}
 						</div>
 					</div>
