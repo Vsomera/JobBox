@@ -1,0 +1,30 @@
+.card_container {
+	padding: 0.75rem;
+	cursor: pointer;
+	border-bottom: 1px solid #e0e0e0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+#position {
+	color: #007aff;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.secondary {
+	font-size: 0.65rem;
+	color: #333333;
+}
+
+.highlighted {
+	padding: 0.75rem;
+	cursor: pointer;
+	border: 1px solid #007aff;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	box-shadow: 0 4px 6px rgba(0, 122, 255, 0.3);
+}
