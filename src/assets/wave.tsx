@@ -3,7 +3,7 @@ interface Prop {
     height : string
 }
 
-export const Wave3 = ( prop : Prop ) => {
+export const Wave = ( prop : Prop ) => {
     return (
         <>
             <svg width={prop.width} height={prop.height} viewBox="0 0 291 963" fill="none" xmlns="http://www.w3.org/2000/svg">
