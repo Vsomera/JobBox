@@ -5,7 +5,7 @@ export const Header = () => {
 		<>
 			<div id={styles.header_root}>
 				<div id={styles.header_container}>
-					<div id={styles.logo_title}>
+					<div id={styles.logo_title} className='items-center'>
 						<img
 							src='../../../public/logo.svg'
 							alt=''
