@@ -1,7 +1,9 @@
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../contexts/userContext';
 import styles from './explore.module.css';
 import { Wave } from '../../assets/wave';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { JobCard } from '../../components/JobCard/JobCard';
 import { Description } from '../../components/Description/Description';
 
@@ -11,6 +13,9 @@ export const Explore = () => {
 	const [jobTitle, setJobTitle] = useState('');
 	const [location, setLocation] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
+
+	const { user } = useContext(UserContext); // Import UserContext
+	const navigate = useNavigate(); // Import useNavigate
 
 	const rapidapi = async (jobTitle = 'developer', location = 'canada') => {
 		try {
@@ -33,7 +38,7 @@ export const Explore = () => {
 		}
 	};
 
-	const handleKeyPress = (e) => {
+	const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
 			rapidapi(jobTitle || undefined, location || undefined);
 		}
@@ -44,7 +49,10 @@ export const Explore = () => {
 	}, []);
 
 	const handleCardClick = (index: number) => {
-		setSelectedIndex(index);
+		if (!user) {
+			navigate('/login');
+		}
+		setSelectedIndex(index); // Ensure this runs even if user is not logged in
 	};
 
 	return (
@@ -121,21 +129,22 @@ export const Explore = () => {
 									id={styles.job_description}>
 									<Description
 										position={
-											jobList[selectedIndex].job_title
+											jobList[selectedIndex]?.job_title
 										}
 										company={
-											jobList[selectedIndex].employer_name
+											jobList[selectedIndex]
+												?.employer_name
 										}
 										location={
-											jobList[selectedIndex].job_location
+											jobList[selectedIndex]?.job_location
 										}
 										job_description={
 											jobList[selectedIndex]
-												.job_description
+												?.job_description
 										}
 										applyLink={
 											jobList[selectedIndex]
-												.job_apply_link
+												?.job_apply_link
 										}
 									/>
 								</section>

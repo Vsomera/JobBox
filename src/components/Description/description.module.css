@@ -28,7 +28,8 @@
 .apply_container {
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	align-items: flex-end;
+	gap: 0.5rem;
 }
 
 .button {
@@ -37,6 +38,7 @@
 	padding: 0.35rem 1rem;
 	border-radius: 5px;
 	background-color: #007aff;
+	cursor: pointer;
 }
 
 #description_content {
@@ -52,4 +54,16 @@
 #content {
 	margin-top: 0.5rem;
 	font-size: 0.7rem;
+}
+
+#bookmark {
+	width: 20%;
+	height: auto;
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+	margin-right: 0.25rem;
+}
+
+#bookmark:hover {
+	opacity: 0.7;
 }
