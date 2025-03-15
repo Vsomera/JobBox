@@ -8,8 +8,13 @@ import { Description } from '../../components/Description/Description';
 export const Explore = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [jobList, setJobList] = useState<any[]>([]);
+	const [jobTitle, setJobTitle] = useState('');
+	const [location, setLocation] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+
 	const rapidapi = async (jobTitle = 'developer', location = 'canada') => {
 		try {
+			setIsLoading(true);
 			const res = await axios.get(
 				`https://jsearch.p.rapidapi.com/search?query=${jobTitle}+jobs+in+${location}&page=1&num_pages=1&country=us&date_posted=all`,
 				{
@@ -20,10 +25,17 @@ export const Explore = () => {
 					},
 				}
 			);
-
-			setJobList((prev) => [...prev, ...res.data.data]);
+			setJobList(res.data.data);
 		} catch (error) {
 			console.error(error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	const handleKeyPress = (e) => {
+		if (e.key === 'Enter') {
+			rapidapi(jobTitle || undefined, location || undefined);
 		}
 	};
 
@@ -55,6 +67,9 @@ export const Explore = () => {
 								type='text'
 								placeholder='Add a job title'
 								className={styles.search_boxes}
+								value={jobTitle}
+								onChange={(e) => setJobTitle(e.target.value)}
+								onKeyDown={handleKeyPress}
 							/>
 							<img
 								src='../../../public/map_pin.png'
@@ -65,9 +80,16 @@ export const Explore = () => {
 								type='text'
 								placeholder='Add a location'
 								className={styles.search_boxes}
+								value={location}
+								onChange={(e) => setLocation(e.target.value)}
+								onKeyDown={handleKeyPress}
 							/>
 						</div>
-						{jobList.length > 0 && (
+						{isLoading ? (
+							<div className={styles.spinnerContainer}>
+								<div className={styles.spinner}></div>
+							</div>
+						) : jobList.length > 0 ? (
 							<div id={styles.results}>
 								<section
 									className={styles.result_sections}
@@ -81,6 +103,7 @@ export const Explore = () => {
 											index === selectedIndex;
 										return (
 											<JobCard
+												key={index}
 												position={position}
 												company={company}
 												location={location}
@@ -92,7 +115,6 @@ export const Explore = () => {
 											/>
 										);
 									})}
-									<br />
 								</section>
 								<section
 									className={styles.result_sections}
@@ -118,7 +140,7 @@ export const Explore = () => {
 									/>
 								</section>
 							</div>
-						)}
+						) : null}
 					</main>
 				</div>
 				<div className='rotate-180'>
