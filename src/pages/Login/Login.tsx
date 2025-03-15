@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import styles from './auth.module.css';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../config/auth';
+import { useNavigate } from 'react-router-dom';
+
 
 export const Login = () => {
   document.title = "JobBox.io | Login";
+
+  const navigate = useNavigate()
   
   // State for form inputs
   const [email, setEmail] = useState('');
@@ -16,6 +20,7 @@ export const Login = () => {
     try {
       // login using user and password
       await doSignInWithEmailAndPassword(email, password)
+      navigate('/')
     } catch (err) {
       console.log(err)
     }
@@ -90,6 +95,7 @@ export const Login = () => {
                   async () => {
                     try {
                       await doSignInWithGoogle();
+                      navigate('/')
                     } catch (err) {
                       console.log(err)
                     }

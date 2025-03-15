@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import styles from './Register.module.css';
 import { doCreateUserWithEmailAndPassword, doSignInWithGoogle } from '../../config/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
   document.title = "JobBox.io | Register";
   
+  const navigate = useNavigate()
+
   // State for form inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +21,7 @@ export const Register = () => {
     
     try {
       await doCreateUserWithEmailAndPassword(email, password)
+      navigate('/')
     } catch (err) {
       console.log(err)
     }
@@ -95,6 +99,7 @@ export const Register = () => {
                 onClick={async () => {
                   try {
                     await doSignInWithGoogle();
+                    navigate('/')
                   } catch (err) {
                     console.log(err)
                   }

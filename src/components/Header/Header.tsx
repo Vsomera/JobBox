@@ -1,6 +1,13 @@
+import { doSignOut } from '../../config/auth';
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 export const Header = () => {
+
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<div id={styles.header_root}>
@@ -33,13 +40,20 @@ export const Header = () => {
 							</Link>
 						</li>
 						<li className={styles.nav_icons}>
-							<Link to='/login'>
+							<div onClick={ async () => {
+								try {
+									await doSignOut()
+									navigate("/login")
+								} catch (err) {
+									console.log(err)
+								}
+							}}>
 								<img
 									src='../../../public/profile.png'
 									alt=''
 									className={styles.icons}
 								/>
-							</Link>
+							</div>
 						</li>
 					</ul>
 				</div>
