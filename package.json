@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.14",
     "firebase": "^11.4.0",
     "lucide-react": "^0.482.0",
+    "openai": "^4.87.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.3.0",

@@ -1,3 +1,4 @@
+import { AI } from '../AI/AI';
 import styles from './description.module.css';
 
 export const Description = ({
@@ -7,7 +8,6 @@ export const Description = ({
 	job_description,
 	applyLink,
 }) => {
-	// Replace \n with <br /> for line breaks
 	const formattedDescription = job_description.replace(/\n/g, '<br />');
 
 	return (
@@ -28,8 +28,8 @@ export const Description = ({
 				</div>
 			</div>
 			<main id={styles.description_content}>
+				<AI job_description={job_description} />
 				<p id={styles.about}>About this job</p>
-				{/* Use dangerouslySetInnerHTML to render HTML */}
 				<div
 					id={styles.content}
 					dangerouslySetInnerHTML={{ __html: formattedDescription }}
