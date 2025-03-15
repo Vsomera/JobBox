@@ -14,8 +14,8 @@ export const Explore = () => {
 	const [location, setLocation] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 
-	const { user } = useContext(UserContext); // Import UserContext
-	const navigate = useNavigate(); // Import useNavigate
+	const { user } = useContext(UserContext);
+	const navigate = useNavigate();
 
 	const rapidapi = async (jobTitle = 'developer', location = 'canada') => {
 		try {
@@ -25,7 +25,7 @@ export const Explore = () => {
 				{
 					headers: {
 						'x-rapidapi-key':
-							'c040b58a21msh0a3a0fb9f48ea20p146d55jsn01e001fb8a87',
+							'b08fbd0715msh8e9d509126c7717p174ee2jsnf1e67870cc22',
 						'x-rapidapi-host': 'jsearch.p.rapidapi.com',
 					},
 				}

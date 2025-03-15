@@ -126,7 +126,7 @@ export const Tracker = () => {
 											</span>
 										</div>
 
-										<div>{application.intDate}</div>
+										{/* <div>{application.intDate}</div> */}
 
 										<a
 											className='underline text-teal-500'
