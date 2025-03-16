@@ -1,277 +1,274 @@
 .authContainer {
-    position: relative;
-    display: flex;
-    height: 100vh;
-    background-color: #fff;
-    overflow: hidden;
-  }
-  
-  /* Top wave - multiple undulations */
-  .authContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%; /* Only cover 70% to avoid form area */
-    height: 120px;
-    background-color: #3b66f5;
-    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z'%3E%3C/path%3E%3C/svg%3E");
-    mask-size: cover;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z'%3E%3C/path%3E%3C/svg%3E");
-    -webkit-mask-size: cover;
-    z-index: 0;
-  }
-  
-  /* Bottom wave - multiple undulations */
-  .authContainer::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 70%; /* Only cover 70% to avoid form area */
-    height: 120px;
-    background-color: #3b66f5;
-    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,120v-15.81C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,120v-5.63C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z'%3E%3C/path%3E%3C/svg%3E");
-    mask-size: cover;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,120v-15.81C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,120v-5.63C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z'%3E%3C/path%3E%3C/svg%3E");
-    -webkit-mask-size: cover;
-    z-index: 0;
-  }
-  
-  /* These elements are no longer needed */
-  .topSection,
-  .bottomSection,
-  .verticalDivider {
-    display: none;
-  }
-  
-  /* Logo styling - now inside the form at the top */
-  .logoContainer {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 120px; /* Even more spacing between logo and form elements */
-    margin-top: 30px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    color: #000;
-    font-size: 0.9rem;
-  }
-  
-  /* 3D cube icon */
-  .boxIcon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 18px;
-    height: 18px;
-    margin-right: 6px;
-    color: #3b66f5;
-  }
-  
-  /* Form container positioning exactly as in Image 2 */
-  .authFormContainer {
-    margin-left: auto;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    z-index: 1;
-    position: relative;
-    border-left: 1px solid #e5e7eb; /* Added faint grey line on the left */
-    height: 100%;
-  }
-  
-  .authForm {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between; /* Spread content to push register link to bottom */
-    align-items: center;
-  }
-  
-  .formContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .authTitle {
-    margin-bottom: 2rem;
-    font-weight: 500;
-    color: #333;
-    font-size: 1.1rem;
-    text-align: center; /* Centered the title */
-  }
-  
-  /* Form fields styling - underlined instead of boxed */
-  .inputGroup {
-    margin-bottom: 1.5rem;
-    width: 100%; /* Reduced width */
-    margin-left: auto;
-    margin-right: auto; /* Center the input fields */
-    
-  }
-  
-  .input {
-    width: 100%;
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-    border: none;
-    border-bottom: 1px solid #e5e7eb;
-    background-color: transparent;
-    transition: border-color 0.15s ease-in-out;
-    outline: none;
-    color: #333;
-    height: 34px;
-  }
-  
-  .input::placeholder {
-    color: #9ca3af;
-    font-size: 1rem; /* Larger placeholder text */
-  }
-  
-  .input:focus {
-    border-color: #3b66f5;
-  }
-  
-  /* Divider styling with lines and OR text */
-  .divider {
-    display: flex;
-    align-items: center;
-    margin: 2rem 0;
-    width: 100%;
-    max-width: 400px; /* Added to prevent over-stretching */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #e5e7eb;
-  }
-  
-  .orText {
-    padding: 0 1rem;
-    color: #6b7280;
-    font-size: 0.8rem;
-  }
-  
-  /* Social login buttons */
-  .socialLogin {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    width: 100%;
-    max-width: 400px; /* Prevent over-stretching */
-    margin-left: auto;
-    margin-right: auto;
-    align-items: stretch; /* Stretch buttons to full width */
-  }
-  
-  .socialButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%; /* Full width within the container */
-    padding: 0.5rem 0;
-    background-color: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 2rem; /* Much more rounded corners */
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: #4b5563;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
-    height: 36px;
-  }
+	position: relative;
+	display: flex;
+	height: 100vh;
+	background-color: #fff;
+	overflow: hidden;
+}
 
-  form {
-    width: 100%;
-  }
-  
-  .socialButton:hover {
-    background-color: #f9fafb;
-  }
-  
-  /* Primary login button */
-  .loginButton {
-    width: 100%; /* Full width within the container */
-    max-width: 400px; /* Prevent over-stretching */
-    padding: 0.5rem 0;
-    background-color: #3b66f5;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem; /* More rounded corners */
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
-    margin-top: 1.5rem;
-    height: 36px;
-    box-shadow: 0 2px 4px rgba(59, 102, 245, 0.2);
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  .loginButton:hover {
-    background-color: #2d4fbc;
-  }
-  
-  /* Register link at bottom with divider line */
-  .registerLink {
-    width: 100%;
-    padding-top: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #4b5563;
-    border-top: 1px solid #e5e7eb;
-    padding-bottom: 1.5rem; /* Add padding at bottom */
-    margin-top: 3rem; /* Push further to bottom */
-  }
-  
-  .registerLink a {
-    color: #3b66f5;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 0.25rem;
-  }
-  
-  .registerLink a:hover {
-    text-decoration: underline;
-  }
+/* Top wave - multiple undulations */
+.authContainer::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70%; /* Only cover 70% to avoid form area */
+	height: 120px;
+	background-color: #3b66f5;
+	mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z'%3E%3C/path%3E%3C/svg%3E");
+	mask-size: cover;
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z'%3E%3C/path%3E%3C/svg%3E");
+	-webkit-mask-size: cover;
+	z-index: 0;
+}
 
-  
+/* Bottom wave - multiple undulations */
+.authContainer::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 70%; /* Only cover 70% to avoid form area */
+	height: 120px;
+	background-color: #3b66f5;
+	mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,120v-15.81C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,120v-5.63C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z'%3E%3C/path%3E%3C/svg%3E");
+	mask-size: cover;
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z' opacity='.25'%3E%3C/path%3E%3Cpath d='M0,120v-15.81C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z' opacity='.5'%3E%3C/path%3E%3Cpath d='M0,120v-5.63C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z'%3E%3C/path%3E%3C/svg%3E");
+	-webkit-mask-size: cover;
+	z-index: 0;
+}
+
+/* These elements are no longer needed */
+.topSection,
+.bottomSection,
+.verticalDivider {
+	display: none;
+}
+
+/* Logo styling - now inside the form at the top */
+.logoContainer {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 120px; /* Even more spacing between logo and form elements */
+	margin-top: 30px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+	color: #000;
+	font-size: 0.9rem;
+}
+
+/* 3D cube icon */
+.boxIcon {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 18px;
+	height: 18px;
+	margin-right: 6px;
+	color: #3b66f5;
+}
+
+/* Form container positioning exactly as in Image 2 */
+.authFormContainer {
+	margin-left: auto;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+	border-left: 1px solid #e5e7eb; /* Added faint grey line on the left */
+	height: 100%;
+}
+
+.authForm {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Spread content to push register link to bottom */
+	align-items: center;
+}
+
+.formContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+}
+
+.authTitle {
+	margin-bottom: 2rem;
+	font-weight: 500;
+	color: #333;
+	font-size: 1.1rem;
+	text-align: center; /* Centered the title */
+}
+
+/* Form fields styling - underlined instead of boxed */
+.inputGroup {
+	margin-bottom: 1.5rem;
+	width: 100%; /* Reduced width */
+	margin-left: auto;
+	margin-right: auto; /* Center the input fields */
+}
+
+.input {
+	width: 100%;
+	padding: 0.5rem 0;
+	font-size: 0.9rem;
+	border: none;
+	border-bottom: 1px solid #e5e7eb;
+	background-color: transparent;
+	transition: border-color 0.15s ease-in-out;
+	outline: none;
+	color: #333;
+	height: 34px;
+}
+
+.input::placeholder {
+	color: #9ca3af;
+	font-size: 1rem; /* Larger placeholder text */
+}
+
+.input:focus {
+	border-color: #3b66f5;
+}
+
+/* Divider styling with lines and OR text */
+.divider {
+	display: flex;
+	align-items: center;
+	margin: 2rem 0;
+	width: 100%;
+	max-width: 400px; /* Added to prevent over-stretching */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.line {
+	flex-grow: 1;
+	height: 1px;
+	background-color: #e5e7eb;
+}
+
+.orText {
+	padding: 0 1rem;
+	color: #6b7280;
+	font-size: 0.8rem;
+}
+
+/* Social login buttons */
+.socialLogin {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 0.75rem;
+	width: 100%;
+	max-width: 400px; /* Prevent over-stretching */
+	margin-left: auto;
+	margin-right: auto;
+	align-items: stretch; /* Stretch buttons to full width */
+}
+
+.socialButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%; /* Full width within the container */
+	padding: 0.5rem 0;
+	background-color: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 2rem; /* Much more rounded corners */
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: #4b5563;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out;
+	height: 36px;
+}
+
+form {
+	width: 100%;
+}
+
+.socialButton:hover {
+	background-color: #f9fafb;
+}
+
+/* Primary login button */
+.loginButton {
+	width: 100%; /* Full width within the container */
+	max-width: 400px; /* Prevent over-stretching */
+	padding: 0.5rem 0;
+	background-color: #3b66f5;
+	color: #fff;
+	border: none;
+	border-radius: 0.5rem; /* More rounded corners */
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out;
+	margin-top: 1.5rem;
+	height: 36px;
+	box-shadow: 0 2px 4px rgba(59, 102, 245, 0.2);
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+.loginButton:hover {
+	background-color: #2d4fbc;
+}
+
+/* Register link at bottom with divider line */
+.registerLink {
+	width: 100%;
+	padding-top: 1rem;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #4b5563;
+	border-top: 1px solid #e5e7eb;
+	padding-bottom: 1.5rem; /* Add padding at bottom */
+	margin-top: 3rem; /* Push further to bottom */
+}
+
+.registerLink a {
+	color: #3b66f5;
+	font-weight: 500;
+	text-decoration: none;
+	margin-left: 0.25rem;
+}
+
+.registerLink a:hover {
+	text-decoration: underline;
+}
