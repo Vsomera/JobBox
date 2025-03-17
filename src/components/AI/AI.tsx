@@ -13,7 +13,7 @@ export const AI = ({ job_description }) => {
 	});
 
 	const llm = async (job_description) => {
-		const prompt = `Summarize the following job description in 30 words or less: ${job_description}`;
+		const prompt = `Based on the following job description, in 40 words or less, write a short summary making sure to include short description of company, job-type, pay range,, and benefits: ${job_description}. Don't include summary as a header.`;
 
 		try {
 			setLoading(true);
