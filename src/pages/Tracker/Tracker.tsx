@@ -21,6 +21,7 @@ export const Tracker = () => {
 	const { user } = useContext(UserContext);
 	const [applications, setApplications] = useState<Application[]>([]);
 	const [loading, setLoading] = useState(true);
+	const uid = user?.uid;
 
 	const getStatusLabel = (status: string) => {
 		const statusMap: { [key: string]: { label: string; color: string } } = {
@@ -33,7 +34,6 @@ export const Tracker = () => {
 		return statusMap[status] || { label: 'Unknown', color: 'gray-500' };
 	};
 
-	const uid = user?.uid;
 
 	useEffect(() => {
 		const fetchApplications = async () => {
@@ -45,10 +45,7 @@ export const Tracker = () => {
 						where('uid', '==', uid)
 					);
 
-					// Get the query snapshot
 					const querySnapshot = await getDocs(q);
-
-					// Map the querySnapshot to an array of application data
 					const apps = querySnapshot.docs.map((doc) => ({
 						id: doc.id,
 						...doc.data(),
