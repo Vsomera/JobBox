@@ -17,10 +17,11 @@ interface Application {
 }
 
 export const Tracker = () => {
-    const navigate = useNavigate();
-    const { user } = useContext(UserContext);
-    const [applications, setApplications] = useState<Application[]>([]);
-    const [loading, setLoading] = useState(true);
+	const navigate = useNavigate();
+	const { user } = useContext(UserContext);
+	const [applications, setApplications] = useState<Application[]>([]);
+	const [loading, setLoading] = useState(true);
+	const uid = user?.uid;
 
     const getStatusLabel = (status: string) => {
         const statusMap: { [key: string]: { label: string; color: string } } = {

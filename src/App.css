@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import 'tailwindcss';
 
-/* Hides the scrollbar */
-body {
-	overflow: hidden;
-	-ms-overflow-style: none;
-	color: #333333;
-}
-
-* {
-	font-family: 'Poppins', sans-serif;
-}
-
 hr {
 	color: #cccccc !important;
 }
