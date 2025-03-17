@@ -34,8 +34,6 @@ export const Tracker = () => {
         return statusMap[status] || { label: 'Unknown', color: 'gray-500' };
     };
 
-    const uid = user?.uid;
-
     useEffect(() => {
         const fetchApplications = async () => {
             if (uid) {
