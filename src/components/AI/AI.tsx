@@ -8,7 +8,7 @@ export const AI = ({ job_description }) => {
 	const [error, setError] = useState(null);
 
 	const openai = new OpenAI({
-		apiKey: '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',
+		apiKey: import.meta.env.VITE_OPENAI_KEY,
 		dangerouslyAllowBrowser: true,
 	});
 

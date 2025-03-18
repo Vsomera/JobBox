@@ -24,8 +24,7 @@ export const Explore = () => {
 				`https://jsearch.p.rapidapi.com/search?query=${jobTitle}+jobs+in+${location}&page=1&num_pages=1&country=us&date_posted=all`,
 				{
 					headers: {
-						'x-rapidapi-key':
-							'b08fbd0715msh8e9d509126c7717p174ee2jsnf1e67870cc22',
+						'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
 						'x-rapidapi-host': 'jsearch.p.rapidapi.com',
 					},
 				}
