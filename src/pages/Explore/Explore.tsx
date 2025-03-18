@@ -7,9 +7,19 @@ import axios from 'axios';
 import { JobCard } from '../../components/JobCard/JobCard';
 import { Description } from '../../components/Description/Description';
 
+interface Job {
+	job_title : string
+	employer_name : string
+	job_location : string
+	job_posted_at : string
+	job_description? : string
+	job_apply_link? : string
+}
+
 export const Explore = () => {
+
 	const [selectedIndex, setSelectedIndex] = useState(0);
-	const [jobList, setJobList] = useState<any[]>([]);
+	const [jobList, setJobList] = useState<Job[]>([]);
 	const [jobTitle, setJobTitle] = useState('');
 	const [location, setLocation] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
