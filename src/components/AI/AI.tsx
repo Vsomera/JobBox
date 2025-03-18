@@ -8,12 +8,12 @@ export const AI = ({ job_description }) => {
 	const [error, setError] = useState(null);
 
 	const openai = new OpenAI({
-		apiKey: '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',
+		apiKey: import.meta.env.VITE_OPENAI_KEY,
 		dangerouslyAllowBrowser: true,
 	});
 
 	const llm = async (job_description) => {
-		const prompt = `Summarize the following job description in 30 words or less: ${job_description}`;
+		const prompt = `Based on the followig job description, in 40 words or less, write a short summary making sure to include short description of company, job-type, pay range,, and benefits: ${job_description}. Don't include summary as a header.`;
 
 		try {
 			setLoading(true);
