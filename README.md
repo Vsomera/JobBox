@@ -26,8 +26,8 @@ jobBox tackles these pain points head-on with:
 
 ### **✨ AI Job Match Assistant**
 
--   **Smart Filters**: NLP-powered search understands "marketing roles in NYC with $80k+ salary"
--   **Priority Score**: AI ranks jobs by fit, saving you 10+ hours/week
+-   **Job Summarization**: AI extracts and summarizes key details from job descriptions, allowing you to quickly evaluate if the role matches your needs.
+-   **Quick Decision Making**: Save time by instantly understanding job requirements, responsibilities, and compensation.
 
 ### **📊 Application Tracker**
 
@@ -36,7 +36,7 @@ jobBox tackles these pain points head-on with:
 
 ### **💾 Save for Later**
 
--   Bookmark jobs in custom lists (e.g., "Remote Roles", "Tech Startups")
+-   Bookmark jobs to manage in Application Tracker
 
 ### **🔍 Unified Search**
 
@@ -80,9 +80,9 @@ Get started in 30 seconds with minimal onboarding
 
 ### 🔍 Browse & Search Jobs
 
-Use the AI-powered search bar ("Software developer jobs in Vancouver, BC")
+Filter your jobs using the search bar ("Software developer jobs in Vancouver, BC")
 
-Apply filters: Location, Salary Range, Experience Level
+AI summarizes key details, helping you quickly decide if the job is a good fit.
 ![Explore Screenshot](readme_img/explore.png)
 
 ### 💾 Save & Track Applications
