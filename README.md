@@ -58,7 +58,7 @@ jobBox tackles these pain points head-on with:
 
 -   Node.js v18+
 
-### Installation
+### Run Locally
 
 ```bash
 git clone https://github.com/yourusername/jobBox.git
