@@ -85,6 +85,10 @@ export const Tracker = () => {
                                     key={application.id}
                                     className='mb-4 p-4 rounded-lg shadow-md flex items-center text-left w-full'
                                 >
+									<button onClick={() => console.log("e")}
+											className=' m-4 px-3 py-2 flex items-center cursor-pointer'
+										>
+										
                                     <div className='w-2/5 truncate'>{application.position}</div>
                                     <div className='w-1/5 text-center'>{application.company}</div>
                                     <div className='w-1/5 flex items-center justify-center'>
@@ -99,6 +103,7 @@ export const Tracker = () => {
                                     >
                                         Job Posting
                                     </a>
+									</button>
                                 </div>
                             ))
                         ) : (
