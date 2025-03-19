@@ -1,4 +1,4 @@
-🚀 jobBox: Your AI-Powered Job Search Companion
+# 🚀 jobBox: Your AI-Powered Job Search Companion
 
 Tired of endless scrolling through irrelevant job postings? jobBox revolutionizes your job hunt with a centralized, AI-driven platform that aggregates high-quality opportunities, tracks applications, and simplifies your search.
 
