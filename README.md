@@ -87,7 +87,7 @@ Apply filters: Location, Salary Range, Experience Level
 
 ### 💾 Save & Track Applications
 
-Click ❤️ to save jobs to custom lists
+Click 📑 to save jobs to custom lists
 
 Monitor application status in the visual tracker dashboard
 ![Tracker Screenshot](readme_img/tracker.png)
@@ -97,3 +97,5 @@ Monitor application status in the visual tracker dashboard
 ## 🎉 Special Thanks
 
 A huge thank you to DreamHacks 2025 for hosting an incredible hackathon and providing a platform to bring this idea to life. This project wouldn't have been possible without the inspiration, resources, and energy from the event and its participants.
+
+---
