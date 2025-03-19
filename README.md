@@ -78,7 +78,7 @@ Get started in 30 seconds with minimal onboarding
 
 ### 🔍 Browse & Search Jobs
 
-Use the AI-powered search bar ("React developer jobs in Berlin €60k+")
+Use the AI-powered search bar ("Software developer jobs in Vancouver, BC")
 
 Apply filters: Location, Salary Range, Experience Level
 ![Explore Screenshot](readme_img/explore.png)
