@@ -66,3 +66,26 @@ cd jobBox
 npm install
 npm run dev
 ```
+
+## Basic Usage
+
+### 🔐 Register & Login
+
+Choose between email registration or Google login
+
+Get started in 30 seconds with minimal onboarding
+![Registration Screenshot](readme_img/login.png)
+
+### 🔍 Browse & Search Jobs
+
+Use the AI-powered search bar ("React developer jobs in Berlin €60k+")
+
+Apply filters: Location, Salary Range, Experience Level
+![Explore Screenshot](readme_img/explore.png)
+
+### 💾 Save & Track Applications
+
+Click ❤️ to save jobs to custom lists
+
+Monitor application status in the visual tracker dashboard
+![Tracker Screenshot](readme_img/tracker.png)
