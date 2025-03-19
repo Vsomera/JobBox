@@ -30,3 +30,39 @@ jobBox tackles these pain points head-on with:
 -   **Priority Score**: AI ranks jobs by fit, saving you 10+ hours/week
 
 ### **📊 Application Tracker**
+
+-   Visual dashboard to monitor applications (Applied → Interview → Offer)
+-   Set reminders for follow-ups and deadlines
+
+### **💾 Save for Later**
+
+-   Bookmark jobs in custom lists (e.g., "Remote Roles", "Tech Startups")
+
+### **🔍 Unified Search**
+
+-   One search bar queries multiple job boards instantly
+
+---
+
+## ⚙️ Tech Stack
+
+-   **Frontend**: React + TypeScript
+-   **Backend**: Firebase
+-   **APIs**: RapidAPI, OpenAI API
+
+---
+
+## 💡 Getting Started
+
+### Prerequisites
+
+-   Node.js v18+
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/jobBox.git
+cd jobBox
+npm install
+npm run dev
+```
