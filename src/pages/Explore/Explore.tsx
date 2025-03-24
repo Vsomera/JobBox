@@ -8,16 +8,15 @@ import { JobCard } from '../../components/JobCard/JobCard';
 import { Description } from '../../components/Description/Description';
 
 interface Job {
-	job_title : string
-	employer_name : string
-	job_location : string
-	job_posted_at : string
-	job_description? : string
-	job_apply_link? : string
+	job_title: string;
+	employer_name: string;
+	job_location: string;
+	job_posted_at: string;
+	job_description?: string;
+	job_apply_link?: string;
 }
 
 export const Explore = () => {
-
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [jobList, setJobList] = useState<Job[]>([]);
 	const [jobTitle, setJobTitle] = useState('');
@@ -39,6 +38,7 @@ export const Explore = () => {
 					},
 				}
 			);
+			console.log(res.data.data);
 			setJobList(res.data.data);
 		} catch (error) {
 			console.error(error);
@@ -137,6 +137,7 @@ export const Explore = () => {
 									className={styles.result_sections}
 									id={styles.job_description}>
 									<Description
+										jobId={jobList[selectedIndex]?.job_id}
 										position={
 											jobList[selectedIndex]?.job_title
 										}

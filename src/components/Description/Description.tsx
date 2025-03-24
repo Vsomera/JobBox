@@ -15,6 +15,7 @@ import {
 import { db } from '../../config/firebase';
 
 export const Description = ({
+	jobId,
 	position,
 	company,
 	location,
@@ -48,6 +49,7 @@ export const Description = ({
 
 	// Fetch bookmark status when job changes
 	useEffect(() => {
+		console.log(jobId);
 		if (position && company) {
 			checkBookmark();
 		}
@@ -78,6 +80,7 @@ export const Description = ({
 				setIsBookmarked(false);
 			} else {
 				await addDoc(applicationsRef, {
+					jobId: jobId,
 					company: company,
 					intDate: Timestamp.now(),
 					position: position,
