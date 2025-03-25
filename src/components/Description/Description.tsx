@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AI } from '../AI/AI';
 import styles from './description.module.css';
 import { UserContext } from '../../contexts/userContext';
@@ -100,7 +100,9 @@ export const Description = ({
 			<div className={styles.description_header}>
 				<div className={styles.basic_details}>
 					<p className={styles.company}>{company}</p>
-					<p className={styles.position}>{position}</p>
+					<Link to={`/posting/${jobId}`}>
+						<p className={styles.position}>{position}</p>
+					</Link>
 					<p className={styles.location}>{location}</p>
 				</div>
 				<div className={styles.apply_container}>

@@ -8,6 +8,7 @@ import { JobCard } from '../../components/JobCard/JobCard';
 import { Description } from '../../components/Description/Description';
 
 interface Job {
+	job_id: string;
 	job_title: string;
 	employer_name: string;
 	job_location: string;
