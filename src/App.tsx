@@ -41,7 +41,7 @@ function App() {
 					/>
 					<Route
 						path='/posting/:jobId'
-						element={!user ? <Posting /> : <Navigate to='/login' />}
+						element={user ? <Posting /> : <Navigate to='/login' />}
 					/>
 				</Routes>
 			</Router>
