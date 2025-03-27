@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AI } from '../AI/AI';
 import styles from './description.module.css';
 import { UserContext } from '../../contexts/userContext';
@@ -15,6 +15,7 @@ import {
 import { db } from '../../config/firebase';
 
 export const Description = ({
+	jobId,
 	position,
 	company,
 	location,
@@ -48,6 +49,7 @@ export const Description = ({
 
 	// Fetch bookmark status when job changes
 	useEffect(() => {
+		console.log(jobId);
 		if (position && company) {
 			checkBookmark();
 		}
@@ -78,6 +80,7 @@ export const Description = ({
 				setIsBookmarked(false);
 			} else {
 				await addDoc(applicationsRef, {
+					jobId: jobId,
 					company: company,
 					intDate: Timestamp.now(),
 					position: position,
@@ -97,7 +100,9 @@ export const Description = ({
 			<div className={styles.description_header}>
 				<div className={styles.basic_details}>
 					<p className={styles.company}>{company}</p>
-					<p className={styles.position}>{position}</p>
+					<Link to={`/posting/${jobId}`}>
+						<p className={styles.position}>{position}</p>
+					</Link>
 					<p className={styles.location}>{location}</p>
 				</div>
 				<div className={styles.apply_container}>
