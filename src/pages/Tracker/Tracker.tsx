@@ -21,7 +21,19 @@ export const Tracker = () => {
 	const { user } = useContext(UserContext);
 	const [applications, setApplications] = useState<Application[]>([]);
 	const [loading, setLoading] = useState(true);
+	const [openModal, setOpenModal] = useState(false);
+	const [selectedApplication, setSelectedApplication] = useState<Application | null>(null);
 	const uid = user?.uid;
+
+	const handleOpenModal = (application: Application) => {
+		setSelectedApplication(application);
+		setOpenModal(true);
+	}
+
+	const handleCloseModal = () => {
+		setOpenModal(false);
+		setSelectedApplication(null);
+	}
 
     const getStatusLabel = (status: string) => {
         const statusMap: { [key: string]: { label: string; color: string } } = {
@@ -81,32 +93,31 @@ export const Tracker = () => {
                             <p>Loading...</p>
                         ) : applications.length > 0 ? (
                             applications.map((application) => (
-                                <div
-                                    key={application.id}
-                                    className='mb-4 p-4 rounded-lg shadow-md flex items-center text-left w-full'
-                                >
-									<button onClick={() => console.log("e")}
-											className=' m-4 px-3 py-2 flex items-center cursor-pointer'
+								<button
+									key={application.id}
+									onClick={() => handleOpenModal(application)}
+									className='mb-4 p-4 rounded-lg shadow-md w-full flex flex-wrap items-center cursor-pointer text-left'
+								>
+									<div className='w-full sm:w-2/5 truncate mb-2 sm:mb-0 pr-2'>{application.position}</div>
+									<div className='w-1/2 sm:w-1/5 truncate mb-2 sm:mb-0 pr-2'>{application.company}</div>
+									<div className='w-1/2 sm:w-1/5 flex items-center mb-2 sm:mb-0 pr-2'>
+										<span className='h-3 w-3 min-w-3 rounded-full bg-blue-500 mr-2 flex-shrink-0' />
+										<span className='font-medium truncate'>{getStatusLabel(application.status).label}</span>
+									</div>
+									<div className='w-full sm:w-1/5 text-left sm:text-right'>
+										<a
+											className='underline text-teal-500'
+											href={application.postURL}
+											target='_blank'
+											rel='noopener noreferrer'
+											onClick={(e) => e.stopPropagation()}
 										>
-										
-                                    <div className='w-2/5 truncate'>{application.position}</div>
-                                    <div className='w-1/5 text-center'>{application.company}</div>
-                                    <div className='w-1/5 flex items-center justify-center'>
-                                        <span className='h-3 w-3 rounded-full bg-blue-500 mr-2' />
-                                        <span className='font-medium'>{getStatusLabel(application.status).label}</span>
-                                    </div>
-                                    <a
-                                        className='w-1/5 text-right underline text-teal-500'
-                                        href={application.postURL}
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
-                                        Job Posting
-                                    </a>
-									</button>
-                                </div>
-                            ))
-                        ) : (
+											Job Posting
+										</a>
+									</div>
+								</button>
+							))
+						) : (
                             <div className='flex w-full items-center justify-center h-100'>
                                 <div className='flex flex-col gap-4 items-center'>
                                     <img
@@ -121,10 +132,17 @@ export const Tracker = () => {
                     </div>
                 </div>
             </div>
-			
+
 			<div className='rotate-180'>
             	<Wave width='w-full' height='h-full' />
 			</div>
+
+			{openModal && selectedApplication && (
+				<div> 
+					
+				</div>
+			)}
+			
 
 
         </div>
