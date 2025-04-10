@@ -17,11 +17,11 @@ import {
 import { db } from '../../config/firebase';
 
 interface Details {
-	job_title: string; // Changed from 'position'
-	employer_name: string; // Changed from 'company'
-	job_location: string; // Changed from 'location'
+	job_title: string;
+	employer_name: string;
+	job_location: string;
 	job_description: string;
-	job_apply_link: string; // Changed from 'applyLink'
+	job_apply_link: string;
 }
 
 export const Posting = () => {
@@ -33,7 +33,7 @@ export const Posting = () => {
 	const navigate = useNavigate();
 
 	const checkBookmark = async () => {
-		if (!user || !details) return; // Added null check for details
+		if (!user || !details) return;
 
 		try {
 			const applicationsRef = collection(db, 'applications');
@@ -55,7 +55,7 @@ export const Posting = () => {
 		if (details) {
 			checkBookmark();
 		}
-	}, [details, user]); // Added dependencies
+	}, [details, user]);
 
 	const toggleBookmark = async () => {
 		if (!user) {
@@ -63,7 +63,7 @@ export const Posting = () => {
 			return;
 		}
 
-		if (!details) return; // Added null check
+		if (!details) return;
 
 		try {
 			const applicationsRef = collection(db, 'applications');
@@ -77,7 +77,6 @@ export const Posting = () => {
 			const querySnapshot = await getDocs(q);
 
 			if (!querySnapshot.empty) {
-				// Delete all matching bookmarks
 				const deletePromises = querySnapshot.docs.map((doc) =>
 					deleteDoc(doc.ref)
 				);
@@ -102,6 +101,7 @@ export const Posting = () => {
 
 	const getJobDetails = async (jobId: string) => {
 		try {
+			console.log(jobId);
 			setLoading(true);
 			const res = await axios.get(
 				`https://jsearch.p.rapidapi.com/job-details?job_id=${jobId}&country=us`,
