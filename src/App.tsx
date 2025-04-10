@@ -18,7 +18,7 @@ function App() {
 	const { user } = useContext(UserContext);
 
 	return (
-		<div className='h-full w-full fixed bottom-0'>
+		<div className='h-full w-full fixed bottom-0 flex flex-col'>
 			<Router>
 				{user && <Header />}
 				<Routes>
