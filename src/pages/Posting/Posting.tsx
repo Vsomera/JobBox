@@ -140,7 +140,7 @@ export const Posting = () => {
 		: 'No description available';
 	return (
 		<>
-			<div className='w-vw h-screen flex justify-between'>
+			<div className='w-full h-[calc(100vh-70.1px)] flex justify-between'>
 				<div>
 					<Wave width='w-full' height='h-full' />
 				</div>
