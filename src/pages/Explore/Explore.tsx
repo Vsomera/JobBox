@@ -73,7 +73,7 @@ export const Explore = () => {
 				</div>
 
 				<div id={styles.explore_root}>
-					<main>
+					<main id={styles.explore_main}>
 						<h1>Search for Jobs</h1>
 						<div id={styles.search}>
 							<img
